@@ -1,0 +1,23 @@
+:root{--bg:#f2efe6;--ink:#1a1a1a;--red:#b3261e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,serif;min-height:100vh;overflow-x:hidden}
+header{position:relative;z-index:1000;padding:1rem 1.5rem;background:rgba(242,239,230,.92)}
+h1{font-size:clamp(2rem,6vw,4.5rem);margin:0;letter-spacing:-.05em;text-shadow:3px 2px 0 rgba(179,38,30,.35),-2px -2px 0 rgba(0,0,0,.15)}
+.hint{margin:.3rem 0 .8rem;font-style:italic}
+.controls{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+button{font:inherit;padding:.5rem 1rem;border:2px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer}
+button:hover{background:var(--ink);color:var(--bg)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+#field{position:relative;height:75vh;min-height:420px;overflow:hidden}
+.thought{position:absolute;background:none;border:0;padding:2px 4px;font-family:Georgia,serif;color:var(--ink);cursor:pointer;line-height:1;white-space:nowrap;
+ mix-blend-mode:multiply;animation:jitter var(--d,3s) ease-in-out infinite alternate}
+.thought:hover{background:none;color:var(--red)}
+.thought.new{animation:pop .5s}
+.thought.red{color:var(--red)}
+.thought.ghost{opacity:.35;filter:blur(1px)}
+@keyframes jitter{from{transform:translate(0,0) rotate(var(--r))}to{transform:translate(var(--jx),var(--jy)) rotate(calc(var(--r) + 2deg))}}
+@keyframes pop{from{scale:2.2;opacity:0}to{scale:1;opacity:1}}
+.poem{max-width:36rem;margin:2rem auto;padding:1rem 1.5rem;font-size:1.25rem;line-height:1.7;border-left:4px solid var(--red);background:var(--bg);position:relative;z-index:5}
+.poem h2{margin-top:0}
+.calm .thought{animation:none;transform:none;opacity:.7}
+@media (prefers-reduced-motion:reduce){.thought,.thought.new{animation:none!important}}
