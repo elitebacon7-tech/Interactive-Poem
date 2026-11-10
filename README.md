@@ -1,6 +1,6 @@
 The Art of Overthinking
 Open index.html in a browser. No build step.
-Live URL: [your-username.github.io](https://YOUR-USERNAME.github.io/YOUR-REPO/)
+Live URL: https://elitebacon7-tech.github.io/Interactive-Poem/
 GitHub: https://github.com/elitebacon7-tech
 
 Design notes: each click mutates the thought (string transforms), nudges it, and spawns 2-3 copies at random positions (capped at 150).
