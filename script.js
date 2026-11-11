@@ -24,10 +24,10 @@ function add(text,x,y){
 }
 function think(b){
   const x=parseFloat(b.style.left),y=parseFloat(b.style.top);
-  b.textContent=pick(mutate)(b.textContent);       // the thought changes
-  b.style.left=Math.max(0,Math.min(x+rnd(-8,8),90))+'%'; // and drifts
+  b.textContent=pick(mutate)(b.textContent);       
+  b.style.left=Math.max(0,Math.min(x+rnd(-8,8),90))+'%'; 
   b.style.top=Math.max(0,Math.min(y+rnd(-8,8),90))+'%';
-  const k=Math.random()<.5?2:3;                    // and multiplies
+  const k=Math.random()<.5?2:3;                    
   for(let i=0;i<k;i++)add(pick(mutate)(b.textContent.length>70?pick(seeds):b.textContent),x+rnd(-15,15),y+rnd(-15,15));
 }
 function update(){count.textContent=n+(n===1?' thought':' thoughts')}
